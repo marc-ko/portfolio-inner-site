@@ -48,57 +48,52 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
-    async function submitForm() {
-        if (!isFormValid) {
+    const handleSubmit = useCallback(() => {
+        if (isFormValid) {
+            setIsLoading(true);
+            fetch('https://marcoko.com/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    company,
+                    email,
+                    name,
+                    message,
+                }),
+            })
+                .then((res) => {
+                    if (res.status === 200) {
+                        setFormMessage(
+                            `Message successfully sent. Thank you ${name}!`
+                        );
+                        setCompany('');
+                        setEmail('');
+                        setName('');
+                        setMessage('');
+                        setFormMessageColor(colors.blue);
+                        setIsLoading(false);
+                    } else {
+                        setFormMessage(
+                            'There was an error sending your message. Please try again.'
+                        );
+                        setFormMessageColor(colors.red);
+                        setIsLoading(false);
+                    }
+                })
+                .catch((err) => {
+                    setFormMessage(
+                        'There was an error sending your message. Please try again.'
+                    );
+                    setFormMessageColor(colors.red);
+                    setIsLoading(false);
+                });
+        } else {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
-            return;
         }
-        try {
-            setIsLoading(true);
-            const res = await fetch(
-                'https://api.henryheffernan.com/api/contact',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        company,
-                        email,
-                        name,
-                        message,
-                    }),
-                }
-            );
-            // the response will be either {success: true} or {success: false, error: message}
-            const data = (await res.json()) as
-                | {
-                      success: false;
-                      error: string;
-                  }
-                | { success: true };
-            if (data.success) {
-                setFormMessage(`Message successfully sent. Thank you ${name}!`);
-                setCompany('');
-                setEmail('');
-                setName('');
-                setMessage('');
-                setFormMessageColor(colors.blue);
-                setIsLoading(false);
-            } else {
-                setFormMessage(data.error);
-                setFormMessageColor(colors.red);
-                setIsLoading(false);
-            }
-        } catch (e) {
-            setFormMessage(
-                'There was an error sending your message. Please try again.'
-            );
-            setFormMessageColor(colors.red);
-            setIsLoading(false);
-        }
-    }
+    }, [company, email, name, message, isFormValid]);
 
     useEffect(() => {
         if (formMessage.length > 0) {
@@ -116,30 +111,30 @@ const Contact: React.FC<ContactProps> = (props) => {
                 <div style={styles.socials}>
                     <SocialBox
                         icon={ghIcon}
-                        link={'https://github.com/henryjeff'}
+                        link={'https://github.com/marc-ko'}
                     />
                     <SocialBox
                         icon={inIcon}
-                        link={'https://www.linkedin.com/in/henryheffernan/'}
+                        link={'https://www.linkedin.com/in/ka-chun-ko-1733a8224/'}
                     />
                     <SocialBox
                         icon={twitterIcon}
-                        link={'https://twitter.com/henryheffernan'}
+                        link={'https://twitter.com/aqcorn'}
                     />
                 </div>
             </div>
             <div className="text-block">
                 <p>
-                    I am currently employed, however if you have any
-                    opportunities, feel free to reach out - I would love to
-                    chat! You can reach me via my personal email, or fill out
-                    the form below!
+                    I'm currently looking for a full-time position. If you have
+                    any opportunities, please reach out - I would love to chat!
+                    You can reach me via my personal email, or fill out the form
+                    below!
                 </p>
                 <br />
                 <p>
                     <b>Email: </b>
-                    <a href="mailto:henryheffernan@gmail.com">
-                        henryheffernan@gmail.com
+                    <a href="mailto:marcoko1026@gmail.com">
+                        marcoko1026@gmail.com
                     </a>
                 </p>
 
@@ -206,7 +201,7 @@ const Contact: React.FC<ContactProps> = (props) => {
                             style={styles.button}
                             type="submit"
                             disabled={!isFormValid || isLoading}
-                            onMouseDown={submitForm}
+                            onMouseDown={handleSubmit}
                         >
                             {!isLoading ? (
                                 'Send Message'

@@ -32,9 +32,9 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     return !isHome ? (
         <div style={styles.navbar}>
             <div style={styles.header}>
-                <h1 style={styles.headerText}>Henry</h1>
-                <h1 style={styles.headerText}>Heffernan</h1>
-                <h3 style={styles.headerShowcase}>Showcase '22</h3>
+                <h1 style={styles.headerText}>Marco</h1>
+                <h1 style={styles.headerText}>Ko</h1>
+                <h3 style={styles.headerShowcase}>Broswer</h3>
             </div>
             <div style={styles.links}>
                 <Link containerStyle={styles.link} to="" text="HOME" />
@@ -44,7 +44,7 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                     to="experience"
                     text="EXPERIENCE"
                 />
-                <Link
+                {/* <Link
                     containerStyle={Object.assign(
                         {},
                         styles.link,
@@ -52,7 +52,7 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                     )}
                     to="projects"
                     text="PROJECTS"
-                />
+                /> */}
                 {
                     // if current path contains projects
                     projectsExpanded && (
@@ -75,16 +75,13 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                         </div>
                     )
                 }
-                <Link
+                {/* <Link
                     containerStyle={styles.link}
                     to="contact"
                     text="CONTACT"
-                />
+                /> */}
             </div>
             <div style={styles.spacer} />
-            <div style={styles.forHireContainer} onMouseDown={goToContact}>
-                {/* <img src={forHire} style={styles.image} alt="" /> */}
-            </div>
         </div>
     ) : (
         <></>

@@ -6,16 +6,13 @@ import { motion } from 'framer-motion';
 export interface CreditsProps extends WindowAppProps {}
 
 const CREDITS = [
-    {
-        title: 'Engineering & Design',
-        rows: [['Henry Heffernan', 'All']],
-    },
+   
     {
         title: 'Modeling & Texturing',
         rows: [
             ['Henry Heffernan', 'Texturing, Composition, & UV'],
             ['Mickael Boitte', 'Computer Model'],
-            ['Sean Nicolas', 'Environment Models'],
+            ['Sean Nicolas', 'Enviornment Models'],
         ],
     },
     {
@@ -78,7 +75,7 @@ const Credits: React.FC<CreditsProps> = (props) => {
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
-            bottomLeftText={'© Copyright 2022 Henry Heffernan'}
+            bottomLeftText={'© Copyright 2024 henryheffernan.com '}
         >
             <div
                 onMouseDown={nextSlide}
@@ -86,7 +83,7 @@ const Credits: React.FC<CreditsProps> = (props) => {
                 style={styles.credits}
             >
                 <h2>Credits</h2>
-                <p>henryheffernan.com, 2022</p>
+                <p>thanks to henryheffernan.com</p>
                 <br />
                 <br />
                 <br />

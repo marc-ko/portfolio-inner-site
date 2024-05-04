@@ -5,12 +5,14 @@ import Doom from '../applications/Doom';
 import OregonTrail from '../applications/OregonTrail';
 import ShutdownSequence from './ShutdownSequence';
 // import ThisComputer from '../applications/ThisComputer';
-import Henordle from '../applications/Henordle';
+import Marcordle from '../applications/Marcordle';
 import Toolbar from './Toolbar';
 import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
 import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
 import Credits from '../applications/Credits';
+import RoboconApp from '../applications/Robocon';
+import ThisComputerApp from '../applications/ThisComputer';
 
 export interface DesktopProps {}
 
@@ -24,23 +26,29 @@ const APPLICATIONS: {
         component: React.FC<ExtendedWindowAppProps<any>>;
     };
 } = {
-    // computer: {
-    //     key: 'computer',
-    //     name: 'This Computer',
-    //     shortcutIcon: 'computerBig',
-    //     component: ThisComputer,
-    // },
     showcase: {
         key: 'showcase',
         name: 'My Showcase',
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
     },
+    roboconapp :{
+        key: 'showcase',
+        name: 'Robocon 2024 Scoreboard',
+        shortcutIcon: 'roboconSBoardIcon',
+        component: RoboconApp,
+    },
     trail: {
         key: 'trail',
         name: 'The Oregon Trail',
         shortcutIcon: 'trailIcon',
         component: OregonTrail,
+    },
+    computer: {
+        key: 'computer',
+        name: 'Google',
+        shortcutIcon: 'computerBig',
+        component: ThisComputerApp,
     },
     doom: {
         key: 'doom',
@@ -54,11 +62,11 @@ const APPLICATIONS: {
         shortcutIcon: 'scrabbleIcon',
         component: Scrabble,
     },
-    henordle: {
-        key: 'henordle',
-        name: 'Henordle',
-        shortcutIcon: 'henordleIcon',
-        component: Henordle,
+    marcordle: {
+        key: 'marcordle',
+        name: 'Marcordle',
+        shortcutIcon: 'marcordleIcon',
+        component: Marcordle,
     },
     credits: {
         key: 'credits',

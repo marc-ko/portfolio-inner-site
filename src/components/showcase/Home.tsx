@@ -16,8 +16,8 @@ const Home: React.FC<HomeProps> = (props) => {
     return (
         <div style={styles.page}>
             <div style={styles.header}>
-                <h1 style={styles.name}>Henry Heffernan</h1>
-                <h2>Software Engineer</h2>
+                <h1 style={styles.name}>Marco Ko</h1>
+                <h2>Software Developer</h2>
             </div>
             <div style={styles.buttons}>
                 <Link containerStyle={styles.link} to="about" text="ABOUT" />
@@ -26,19 +26,17 @@ const Home: React.FC<HomeProps> = (props) => {
                     to="experience"
                     text="EXPERIENCE"
                 />
-                <Link
+                {/* <a style={styles.link} href="https://www.linkedin.com/in/ka-chun-ko-1733a8224/" > EXPERIENCE </a> */}
+                {/* <Link
                     containerStyle={styles.link}
                     to="projects"
                     text="PROJECTS"
-                />
-                <Link
+                /> */}
+                {/* <Link
                     containerStyle={styles.link}
                     to="contact"
                     text="CONTACT"
-                />
-            </div>
-            <div style={styles.forHireContainer} onMouseDown={goToContact}>
-                {/* <img src={forhire} alt="" /> */}
+                /> */}
             </div>
         </div>
     );

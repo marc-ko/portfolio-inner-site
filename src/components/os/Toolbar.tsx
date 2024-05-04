@@ -96,10 +96,24 @@ const Toolbar: React.FC<ToolbarProps> = ({
                 >
                     <div style={styles.startWindowInner}>
                         <div style={styles.verticalStartContainer}>
-                            <p style={styles.verticalText}>HeffernanOS</p>
+                            <p style={styles.verticalText}>FakeAssOS</p>
                         </div>
                         <div style={styles.startWindowContent}>
                             <div style={styles.startMenuSpace} />
+                            <div style={styles.startMenuLine} />
+                            <div
+                                className="start-menu-option"
+                                style={styles.startMenuOption}
+                                onMouseDown={shutdown}
+                            >
+                                <Icon
+                                    style={styles.startMenuIcon}
+                                    icon="computerSmall"
+                                />
+                                <p style={styles.startMenuText}>
+                                    L<u>o</u>g out
+                                </p>
+                            </div>
                             <div style={styles.startMenuLine} />
                             <div
                                 className="start-menu-option"
@@ -115,6 +129,7 @@ const Toolbar: React.FC<ToolbarProps> = ({
                                 </p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             )}
