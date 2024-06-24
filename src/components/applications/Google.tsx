@@ -2,24 +2,24 @@ import React from 'react';
 // import DesktopShortcut from '../os/DesktopShortcut';
 import Window from '../os/Window';
 
-export interface ThisComputerProps extends WindowAppProps {}
+export interface GoogleProps extends WindowAppProps { }
 
-const ThisComputerApp: React.FC<ThisComputerProps> = (props) => {
+const GoogleApp: React.FC<GoogleProps> = (props) => {
     return (
         <Window
-            top={20}
-            left={20}
-            width={600}
-            height={400}
-            windowBarIcon="computerSmall"
-            windowTitle="This Computer"
+            top={10}
+            left={10}
+            width={800}
+            height={600}
+            windowBarIcon="google"
+            windowTitle="Google"
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
         >
             <div className="site-page">
                 <iframe
-                    src="https://oldgoogle.neocities.org/1998/"
+                    src="https://oldgoogle.neocities.org/2010/"
                     title="google"
                     width="100%"
                     height="100%"
@@ -37,4 +37,4 @@ const ThisComputerApp: React.FC<ThisComputerProps> = (props) => {
     );
 };
 
-export default ThisComputerApp;
+export default GoogleApp;

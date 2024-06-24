@@ -115,8 +115,8 @@ const DesktopShortcut: React.FC<DesktopShortcutProps> = ({
                     isSelected
                         ? 'selected-shortcut-border'
                         : lastSelected
-                        ? 'shortcut-border'
-                        : ''
+                            ? 'shortcut-border'
+                            : ''
                 }
                 id={`${shortcutId}`}
                 style={isSelected ? { backgroundColor: colors.blue } : {}}

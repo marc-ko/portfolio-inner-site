@@ -2,7 +2,7 @@ import React from 'react';
 // import DesktopShortcut from '../os/DesktopShortcut';
 import Window from '../os/Window';
 
-export interface RoboconProps extends WindowAppProps {}
+export interface RoboconProps extends WindowAppProps { }
 
 const RoboconApp: React.FC<RoboconProps> = (props) => {
     return (

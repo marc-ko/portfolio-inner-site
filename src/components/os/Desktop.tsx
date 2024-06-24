@@ -12,9 +12,9 @@ import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
 import Credits from '../applications/Credits';
 import RoboconApp from '../applications/Robocon';
-import ThisComputerApp from '../applications/ThisComputer';
+import Google from '../applications/Google';
 
-export interface DesktopProps {}
+export interface DesktopProps { }
 
 type ExtendedWindowAppProps<T> = T & WindowAppProps;
 
@@ -32,8 +32,8 @@ const APPLICATIONS: {
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
     },
-    roboconapp :{
-        key: 'showcase',
+    roboconapp: {
+        key: 'roboconapp',
         name: 'Robocon 2024 Scoreboard',
         shortcutIcon: 'roboconSBoardIcon',
         component: RoboconApp,
@@ -44,11 +44,11 @@ const APPLICATIONS: {
         shortcutIcon: 'trailIcon',
         component: OregonTrail,
     },
-    computer: {
-        key: 'computer',
+    google: {
+        key: 'google',
         name: 'Google',
-        shortcutIcon: 'computerBig',
-        component: ThisComputerApp,
+        shortcutIcon: 'google',
+        component: Google,
     },
     doom: {
         key: 'doom',

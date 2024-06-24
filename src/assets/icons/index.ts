@@ -9,6 +9,7 @@ import myComputer from './myComputer.png';
 import showcaseIcon from './showcaseIcon.png';
 import doomIcon from './doomIcon.png';
 import marcordleIcon from './marcordleIcon.png';
+import google from './google.png';
 import roboconSBoardIcon from './roboconSBoardIcon.png';
 import credits from './credits.png';
 import volumeOn from './volumeOn.png';
@@ -39,6 +40,7 @@ const icons = {
     windowGameIcon: windowGameIcon,
     windowExplorerIcon: windowExplorerIcon,
     windowsStartIcon: windowsStartIcon,
+    google: google,
     trailIcon: trailIcon,
 };
 
