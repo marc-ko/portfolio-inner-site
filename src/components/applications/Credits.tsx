@@ -3,10 +3,10 @@ import Window from '../os/Window';
 import { useInterval } from 'usehooks-ts';
 import { motion } from 'framer-motion';
 
-export interface CreditsProps extends WindowAppProps {}
+export interface CreditsProps extends WindowAppProps { }
 
 const CREDITS = [
-   
+
     {
         title: 'Modeling & Texturing',
         rows: [
@@ -75,7 +75,7 @@ const Credits: React.FC<CreditsProps> = (props) => {
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
-            bottomLeftText={'© Copyright 2024 henryheffernan.com '}
+
         >
             <div
                 onMouseDown={nextSlide}

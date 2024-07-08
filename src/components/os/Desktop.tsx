@@ -12,6 +12,7 @@ import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
 import Credits from '../applications/Credits';
 import RoboconApp from '../applications/Robocon';
+import Blog from '../applications/Blog';
 import Google from '../applications/Google';
 
 export interface DesktopProps { }
@@ -32,11 +33,11 @@ const APPLICATIONS: {
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
     },
-    roboconapp: {
-        key: 'roboconapp',
-        name: 'Robocon 2024 Scoreboard',
-        shortcutIcon: 'roboconSBoardIcon',
-        component: RoboconApp,
+    blog: {
+        key: 'blog',
+        name: 'My Blog',
+        shortcutIcon: 'computerBig',
+        component: Blog,
     },
     trail: {
         key: 'trail',
@@ -73,6 +74,12 @@ const APPLICATIONS: {
         name: 'Credits',
         shortcutIcon: 'credits',
         component: Credits,
+    },
+    roboconapp: {
+        key: 'roboconapp',
+        name: 'Robocon 2024 Scoreboard',
+        shortcutIcon: 'roboconSBoardIcon',
+        component: RoboconApp,
     },
 };
 

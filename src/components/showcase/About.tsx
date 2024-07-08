@@ -39,12 +39,10 @@ const About: React.FC<AboutProps> = (props) => {
                 <p>
                     From a young age, I have had a curiosity about how things
                     worked. This naturally led me to become absolutely obsessed
-                    with building things. In
-                    elementary school, I joined the Robotics team at the Hong Kong University of Science and Technology (HKUST),
-                    which was my first real exposure to
-                    embedded programming.
+                    with building things. In my elementary school, I tried learning how to use my broken HP PC in my house to build a local web server by C# which was the first exposure to web developement.
+
                 </p>
-                <br />
+                <br />q
                 <div className="captioned-image">
                     <img src={me} style={styles.image} alt="" />
                     <p>
@@ -54,33 +52,22 @@ const About: React.FC<AboutProps> = (props) => {
                         </sub>
                     </p>
                 </div>
-                {/*
+                <p> In
+                    high school, I joined school's STEM and that is the very first time hands-on experience to embbed programming. With the aid from teachers and friends, I decided to take a step further and started learning Python and Java. I started to build small projects with Raspberry PI for fun and to learn more about the world of software development.
+                </p>
+                <br />
+
                 <p>
-                     I started programming more seriously in high school,
-                    initially learning how to scrape and interact with websites.
-                    I went on to do a ton of passion projects, many of them with
-                    one of my closest friends,{' '}
-                    <a
-                        rel="noreferrer"
-                        target="_blank"
-                        href="https://www.linkedin.com/in/scott-bass-189a7919b/"
-                    >
-                        Scott Bass
-                    </a>
-                    . We worked on many projects together, including chat bots,
-                    multiple game projects, apps, and more. One of these
-                    projects is viewable on my{' '}
-                    <Link to="/projects/software">Software Projects</Link> page.
-                </p> */}
+                    Ever since then, I started programming more seriously and started
+                    learning how to scrape and interact with websites.
+
+                </p>
                 <br />
                 <p>
-                    In 2017, I got accepted into Rennselear Polytechnic
-                    Institute to study Computer Science. It was my first choice
+                    In 2021, I got accepted into Hong Kong University of Science and Technology to study Computer Enginnering. It was my first choice to expore the world of soft-hardware
                     and I was absolutely ecstatic to be going to such a great
-                    university. At the end of my sophomore year, I got an
-                    internship working for the startup Hover, primarily focusing
-                    on frontend work. I continued to work at Hover on and off
-                    for about a year and a half, until the start of my senior
+                    university. At the beginning of my second year, I got into HKUST Robotics Team Robocon Subteam, primarily focusing
+                    on RTOS Embbeded Programming., until the start of my senior
                     year when I decided to focus on other opportunities.
                 </p>
                 <br />

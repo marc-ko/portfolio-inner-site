@@ -85,7 +85,7 @@ const DesktopShortcut: React.FC<DesktopShortcutProps> = ({
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
-        };
+        }
     }, [isSelected, handleClickOutside]);
 
     return (
@@ -101,7 +101,7 @@ const DesktopShortcut: React.FC<DesktopShortcutProps> = ({
                     className="desktop-shortcut-icon"
                     style={Object.assign(
                         {},
-                        styles.iconOverlay,
+                        shortcutId === 'desktop-shortcut-Google' ? styles.iconOverlayOfGoogle : shortcutId === 'desktop-shortcut-Robocon2024Scoreboard' ? styles.iconOverlayOfRbSb : styles.iconOverlay,
                         isSelected && styles.checkerboard,
                         isSelected && {
                             WebkitMask: `url(${requiredIcon})`,
@@ -164,6 +164,18 @@ const styles: StyleSheetCSS = {
         top: 0,
         width: 32,
         height: 32,
+    },
+    iconOverlayOfRbSb: {
+        position: 'absolute',
+        top: 0,
+        width: 16,
+        height: 16,
+    }, // Better can be done... not hardcode it 
+    iconOverlayOfGoogle: {
+        position: 'absolute',
+        top: 0,
+        width: 26,
+        height: 26,
     },
     checkerboard: {
         backgroundImage: `linear-gradient(45deg, ${colors.blue} 25%, transparent 25%),

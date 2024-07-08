@@ -2,31 +2,27 @@ import React from 'react';
 // import DesktopShortcut from '../os/DesktopShortcut';
 import Window from '../os/Window';
 
-export interface RoboconProps extends WindowAppProps { }
+export interface BlogProps extends WindowAppProps { }
 
-const RoboconApp: React.FC<RoboconProps> = (props) => {
+const BlogApp: React.FC<BlogProps> = (props) => {
     return (
         <Window
             top={20}
             left={20}
             width={1100}
             height={800}
-            windowBarIcon="roboconSBoardIcon"
-            windowTitle="Hong Kong Robocon 2024 Scoreboard"
+            windowBarIcon="windowGameIcon"
+            windowTitle="marc-ko.github.io - Blog"
             windowBarColor="#941d13"
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
         >
             <div className="site-page">
-                <div style={styles.disclaimerTab} className='disclaimerTab'>
-                    <textarea>I lost this year if you wish to know
-                    </textarea>
-                </div>
 
                 <iframe
-                    src="https://robocon2024.ustrobocon.win"
-                    title="scoreboard"
+                    src="https://marc-ko.github.io/"
+                    title="blog"
                     width="100%"
                     height="100%"
                 />
@@ -43,13 +39,5 @@ const RoboconApp: React.FC<RoboconProps> = (props) => {
     );
 };
 
-const styles: StyleSheetCSS = {
-    disclaimerTab: {
-        display: 'grid',
-        zIndex: 5,
-        position: 'absolute',
-        width: '100%',
-    },
-}
 
-export default RoboconApp;
+export default BlogApp;
