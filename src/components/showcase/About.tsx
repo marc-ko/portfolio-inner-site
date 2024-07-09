@@ -42,7 +42,7 @@ const About: React.FC<AboutProps> = (props) => {
                     with building things. In my elementary school, I tried learning how to use my broken HP PC in my house to build a local web server by C# which was the first exposure to web developement.
 
                 </p>
-                <br />q
+                <br />
                 <div className="captioned-image">
                     <img src={me} style={styles.image} alt="" />
                     <p>
