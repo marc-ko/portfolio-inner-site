@@ -4,7 +4,7 @@ import { Link } from '../general';
 import forhire from '../../assets/pictures/forHireGif.gif';
 import { useNavigate } from 'react-router';
 
-export interface HomeProps {}
+export interface HomeProps { }
 
 const Home: React.FC<HomeProps> = (props) => {
     const navigate = useNavigate();
@@ -32,11 +32,11 @@ const Home: React.FC<HomeProps> = (props) => {
                     to="projects"
                     text="PROJECTS"
                 /> */}
-                {/* <Link
+                <Link
                     containerStyle={styles.link}
                     to="contact"
                     text="CONTACT"
-                /> */}
+                />
             </div>
         </div>
     );

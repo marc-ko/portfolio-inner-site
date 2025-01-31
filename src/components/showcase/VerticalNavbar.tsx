@@ -3,7 +3,7 @@ import { Link } from '../general';
 import forHire from '../../assets/pictures/forHireGif.gif';
 import { useLocation, useNavigate } from 'react-router';
 
-export interface VerticalNavbarProps {}
+export interface VerticalNavbarProps { }
 
 const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     const location = useLocation();
@@ -26,7 +26,7 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
         } else {
             setIsHome(false);
         }
-        return () => {};
+        return () => { };
     }, [location.pathname]);
 
     return !isHome ? (
@@ -50,7 +50,7 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                         styles.link,
                         projectsExpanded && styles.expandedLink
                     )}
-                    to="projects"
+                    to="projects/software"
                     text="PROJECTS"
                 /> */}
                 {
@@ -75,11 +75,11 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
                         </div>
                     )
                 }
-                {/* <Link
+                <Link
                     containerStyle={styles.link}
                     to="contact"
                     text="CONTACT"
-                /> */}
+                />
             </div>
             <div style={styles.spacer} />
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ResumeDownload from './ResumeDownload';
 
-export interface ExperienceProps {}
+export interface ExperienceProps { }
 
 const Experience: React.FC<ExperienceProps> = (props) => {
     return (
@@ -29,9 +29,9 @@ const Experience: React.FC<ExperienceProps> = (props) => {
             </div>
             <div className="text-block">
                 <p>
-                Platforms were developed using a variety of languages 
-                and frameworks. The languages include PHP, JavaScript, Python, Dart, C++, and Solidity, with varying levels of expertise. In JavaScript, for instance, Vue.js is used at a beginner level. Dart, C++, and Solidity are also used at a beginner level. 
-                The frameworks used in the development include Laravel and Codeigniter.
+                    Platforms were developed using a variety of languages
+                    and frameworks. The languages include PHP, JavaScript, Python, Dart, C++, and Solidity, with varying levels of expertise. In JavaScript, for instance, Vue.js is used at a beginner level. Dart, C++, and Solidity are also used at a beginner level.
+                    The frameworks used in the development include Laravel and Codeigniter.
                 </p>
                 <br />
                 <ul>
@@ -61,6 +61,55 @@ const Experience: React.FC<ExperienceProps> = (props) => {
                     </li>
                 </ul>
             </div>
+
+            <div style={styles.headerContainer}>
+                <div style={styles.header}>
+                    <div style={styles.headerRow}>
+                        <h1>HKUST Robotics Team (Robocon)</h1>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href={'https://ustrobocon.win/'}
+                        >
+                            <h4>robotics.hkust.edu.hk</h4>
+                        </a>
+                    </div>
+                    <div style={styles.headerRow}>
+                        <h3>Software Engineer</h3>
+                        <b>
+                            <p>Spring 2023 - Present</p>
+                        </b>
+                    </div>
+                </div>
+            </div>
+
+            <div className="text-block">
+                <p>
+
+                </p>
+                <br />
+                <ul>
+                    <li>
+                        <p>
+                            Designed and implemented embedded control systems for robotic applications using STM32 microcontrollers, optimizing
+                            code for real-time performance and resource efficiency.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Developed drivers and middleware to seamlessly integrate various sensors and actuators with the robotic control
+                            platform, ensuring reliable and responsive operation.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Demonstrated strong problem-solving skills in debugging and optimizing embedded software, resulting in improved
+                            performance and reliability of the robotic systems.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     );
 };
