@@ -25,7 +25,7 @@ const RoboconApp: React.FC<RoboconProps> = (props) => {
                 </div>
 
                 <iframe
-                    src="https://robocon2024.ustrobocon.win"
+                    src="https://robocon2024.yuetau.net"
                     title="scoreboard"
                     width="100%"
                     height="100%"
