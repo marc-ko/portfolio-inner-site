@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export interface HomeProps { }
 
 const Home: React.FC<HomeProps> = (props) => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     // const goToContact = () => {
     //     navigate('/contact');
