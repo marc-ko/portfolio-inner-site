@@ -11,9 +11,9 @@ const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     const [isHome, setIsHome] = useState(false);
 
     const navigate = useNavigate();
-    const goToContact = () => {
-        navigate('/contact');
-    };
+    // const goToContact = () => {
+    //     navigate('/contact');
+    // };
 
     useEffect(() => {
         if (location.pathname.includes('/projects')) {

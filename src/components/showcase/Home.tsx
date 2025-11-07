@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '../general';
 
-import forhire from '../../assets/pictures/forHireGif.gif';
+// import forhire from '../../assets/pictures/forHireGif.gif';
 import { useNavigate } from 'react-router-dom';
 
 export interface HomeProps { }
@@ -9,9 +9,9 @@ export interface HomeProps { }
 const Home: React.FC<HomeProps> = (props) => {
     const navigate = useNavigate();
 
-    const goToContact = () => {
-        navigate('/contact');
-    };
+    // const goToContact = () => {
+    //     navigate('/contact');
+    // };
 
     return (
         <div style={styles.page}>
