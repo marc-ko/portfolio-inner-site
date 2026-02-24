@@ -10,7 +10,7 @@ import Toolbar from './Toolbar';
 import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
 import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
-import Credits from '../applications/Credits';
+// import Credits from '../applications/Credits';
 import RoboconApp from '../applications/Robocon';
 import Blog from '../applications/Blog';
 import Google from '../applications/Google';
@@ -69,12 +69,12 @@ const APPLICATIONS: {
         shortcutIcon: 'marcordleIcon',
         component: Marcordle,
     },
-    credits: {
-        key: 'credits',
-        name: 'Credits',
-        shortcutIcon: 'credits',
-        component: Credits,
-    },
+    // credits: {
+    //     key: 'credits',
+    //     name: 'Credits',
+    //     shortcutIcon: 'credits',
+    //     component: Credits,
+    // },
     roboconapp: {
         key: 'roboconapp',
         name: 'Robocon 2024 Scoreboard',
