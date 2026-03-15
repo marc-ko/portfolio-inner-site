@@ -27,8 +27,8 @@ const About: React.FC<AboutProps> = (props) => {
                     building it. If you have any questions or comments, feel
                     free to contact me using{' '}
                     <Link to="/contact">this form</Link> or shoot me an email at{' '}
-                    <a href="mailto:marcoko@ckentgroup.com">
-                        marcoko@ckentgroup.com
+                    <a href="mailto:me@marcoko.com">
+                        me@marcoko.com
                     </a>
                 </p>
             </div>
