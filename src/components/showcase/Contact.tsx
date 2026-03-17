@@ -48,10 +48,13 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
-    // FormSubmit.co: no signup. Uses your email in URL; first submission sends you an activation link.
-    const contactEmail =
-        process.env.REACT_APP_CONTACT_EMAIL ?? 'me@marcoko.com';
-    const formEndpoint = `https://formsubmit.co/ajax/${encodeURIComponent(contactEmail)}`;
+    // FormSubmit.co: use hashed form ID instead of naked email.
+    // After activation email, they provided: 3b79bfa8c6af877e695f971c686a2a1c
+    const formEndpoint =
+        process.env.REACT_APP_FORMSUBMIT_ID != null &&
+        process.env.REACT_APP_FORMSUBMIT_ID !== ''
+            ? `https://formsubmit.co/ajax/${process.env.REACT_APP_FORMSUBMIT_ID}`
+            : 'https://formsubmit.co/ajax/3b79bfa8c6af877e695f971c686a2a1c';
 
     const handleSubmit = useCallback(() => {
         if (isFormValid) {
