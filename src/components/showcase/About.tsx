@@ -134,8 +134,8 @@ const About: React.FC<AboutProps> = (props) => {
                     them. You can reach me through the{' '}
                     <Link to="/contact">contact page</Link> or shoot me an email
                     at{' '}
-                    <a href="mailto:marcoko1026@gmail.com">
-                        marcoko1026@gmail.com
+                    <a href="mailto:me@marcoko.com">
+                        me@marcoko.com
                     </a>
                 </p>
             </div>

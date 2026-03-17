@@ -5,7 +5,7 @@ import ghIcon from '../../assets/pictures/contact-gh.png';
 import inIcon from '../../assets/pictures/contact-in.png';
 import ResumeDownload from './ResumeDownload';
 
-export interface ContactProps {}
+export interface ContactProps { }
 
 // function to validate email
 const validateEmail = (email: string) => {
@@ -48,23 +48,30 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
+    // FormSubmit.co: no signup. Uses your email in URL; first submission sends you an activation link.
+    const contactEmail =
+        process.env.REACT_APP_CONTACT_EMAIL ?? 'me@marcoko.com';
+    const formEndpoint = `https://formsubmit.co/ajax/${encodeURIComponent(contactEmail)}`;
+
     const handleSubmit = useCallback(() => {
         if (isFormValid) {
             setIsLoading(true);
-            fetch('https://marcoko.com/api/send-email', {
+            fetch(formEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    Accept: 'application/json',
                 },
                 body: JSON.stringify({
-                    company,
-                    email,
                     name,
+                    email,
+                    company: company || undefined,
                     message,
+                    _subject: `Portfolio contact from ${name}`,
                 }),
             })
                 .then((res) => {
-                    if (res.status === 200) {
+                    if (res.ok) {
                         setFormMessage(
                             `Message successfully sent. Thank you ${name}!`
                         );
@@ -73,16 +80,15 @@ const Contact: React.FC<ContactProps> = (props) => {
                         setName('');
                         setMessage('');
                         setFormMessageColor(colors.blue);
-                        setIsLoading(false);
                     } else {
                         setFormMessage(
                             'There was an error sending your message. Please try again.'
                         );
                         setFormMessageColor(colors.red);
-                        setIsLoading(false);
                     }
+                    setIsLoading(false);
                 })
-                .catch((err) => {
+                .catch(() => {
                     setFormMessage(
                         'There was an error sending your message. Please try again.'
                     );
@@ -93,7 +99,7 @@ const Contact: React.FC<ContactProps> = (props) => {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
         }
-    }, [company, email, name, message, isFormValid]);
+    }, [company, email, name, message, isFormValid, formEndpoint]);
 
     useEffect(() => {
         if (formMessage.length > 0) {
@@ -133,8 +139,8 @@ const Contact: React.FC<ContactProps> = (props) => {
                 <br />
                 <p>
                     <b>Email: </b>
-                    <a href="mailto:marcoko1026@gmail.com">
-                        marcoko1026@gmail.com
+                    <a href="mailto:me@marcoko.com">
+                        me@marcoko.com
                     </a>
                 </p>
 
