@@ -14,6 +14,7 @@ import { IconName } from '../../assets/icons';
 import RoboconApp from '../applications/Robocon';
 import Blog from '../applications/Blog';
 import Google from '../applications/Google';
+import TerminalApp from '../applications/Terminal';
 
 export interface DesktopProps { }
 
@@ -25,6 +26,7 @@ const APPLICATIONS: {
         name: string;
         shortcutIcon: IconName;
         component: React.FC<ExtendedWindowAppProps<any>>;
+        showOnDesktop?: boolean;
     };
 } = {
     showcase: {
@@ -81,6 +83,13 @@ const APPLICATIONS: {
         shortcutIcon: 'roboconSBoardIcon',
         component: RoboconApp,
     },
+    terminal: {
+        key: 'terminal',
+        name: 'Terminal',
+        shortcutIcon: 'terminalIcon',
+        component: TerminalApp,
+        showOnDesktop: false,
+    },
 };
 
 const Desktop: React.FC<DesktopProps> = (props) => {
@@ -102,6 +111,9 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         const newShortcuts: DesktopShortcutProps[] = [];
         Object.keys(APPLICATIONS).forEach((key) => {
             const app = APPLICATIONS[key];
+            if (app.showOnDesktop === false) {
+                return;
+            }
             newShortcuts.push({
                 shortcutName: app.name,
                 icon: app.shortcutIcon,
@@ -216,6 +228,19 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         [getHighestZIndex]
     );
 
+    const openTerminal = useCallback(() => {
+        const app = APPLICATIONS.terminal;
+        addWindow(
+            app.key,
+            <app.component
+                onInteract={() => onWindowInteract(app.key)}
+                onMinimize={() => minimizeWindow(app.key)}
+                onClose={() => removeWindow(app.key)}
+                key={app.key}
+            />
+        );
+    }, [addWindow, onWindowInteract, minimizeWindow, removeWindow]);
+
     return !shutdown ? (
         <div style={styles.desktop}>
             {/* For each window in windows, loop over and render  */}
@@ -261,6 +286,7 @@ const Desktop: React.FC<DesktopProps> = (props) => {
                 windows={windows}
                 toggleMinimize={toggleMinimize}
                 shutdown={startShutdown}
+                openTerminal={openTerminal}
             />
         </div>
     ) : (

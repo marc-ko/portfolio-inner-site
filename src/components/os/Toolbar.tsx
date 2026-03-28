@@ -9,12 +9,14 @@ export interface ToolbarProps {
     windows: DesktopWindows;
     toggleMinimize: (key: string) => void;
     shutdown: () => void;
+    openTerminal: () => void;
 }
 
 const Toolbar: React.FC<ToolbarProps> = ({
     windows,
     toggleMinimize,
     shutdown,
+    openTerminal,
 }) => {
     const getTime = () => {
         const date = new Date();
@@ -104,6 +106,24 @@ const Toolbar: React.FC<ToolbarProps> = ({
                             <div
                                 className="start-menu-option"
                                 style={styles.startMenuOption}
+                                onMouseDown={(e) => {
+                                    e.stopPropagation();
+                                    openTerminal();
+                                    setStartWindowOpen(false);
+                                }}
+                            >
+                                <Icon
+                                    style={styles.startMenuIcon}
+                                    icon="terminalIcon"
+                                    size={24}
+                                />
+                                <p style={styles.startMenuText}>
+                                    O<u>p</u>en Terminal
+                                </p>
+                            </div>
+                            <div
+                                className="start-menu-option"
+                                style={styles.startMenuOption}
                                 onMouseDown={shutdown}
                             >
                                 <Icon
@@ -129,7 +149,7 @@ const Toolbar: React.FC<ToolbarProps> = ({
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             )}
@@ -167,8 +187,8 @@ const Toolbar: React.FC<ToolbarProps> = ({
                                         {},
                                         styles.tabContainerOuter,
                                         lastActive === key &&
-                                            !windows[key].minimized &&
-                                            styles.activeTabOuter
+                                        !windows[key].minimized &&
+                                        styles.activeTabOuter
                                     )}
                                     onMouseDown={() => toggleMinimize(key)}
                                 >
@@ -177,8 +197,8 @@ const Toolbar: React.FC<ToolbarProps> = ({
                                             {},
                                             styles.tabContainer,
                                             lastActive === key &&
-                                                !windows[key].minimized &&
-                                                styles.activeTabInner
+                                            !windows[key].minimized &&
+                                            styles.activeTabInner
                                         )}
                                     >
                                         <Icon

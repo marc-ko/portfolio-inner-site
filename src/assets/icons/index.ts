@@ -17,6 +17,7 @@ import volumeOff from './volumeOff.png';
 import trailIcon from './trailIcon.png';
 import windowGameIcon from './windowGameIcon.png';
 import windowExplorerIcon from './windowExplorerIcon.png';
+import terminalIcon from './terminalIcon.png';
 import windowsStartIcon from './windowsStartIcon.png';
 import scrabbleIcon from './scrabbleIcon.png';
 import close from './close.png';
@@ -42,6 +43,7 @@ const icons = {
     windowsStartIcon: windowsStartIcon,
     google: google,
     trailIcon: trailIcon,
+    terminalIcon: terminalIcon,
 };
 
 export type IconName = keyof typeof icons;
