@@ -1,7 +1,7 @@
 import React from 'react';
 
-import girlRun from '../../../assets/pictures/projects/art/girl-run.gif';
-import gsts from '../../../assets/pictures/projects/art/gsts.png';
+// import girlRun from '../../../assets/pictures/projects/art/girl-run.gif';
+// import gsts from '../../../assets/pictures/projects/art/gsts.png';
 
 export interface ArtProjectsProps {}
 
@@ -35,6 +35,7 @@ const ArtProjects: React.FC<ArtProjectsProps> = (props) => {
                     animation.
                 </p>
                 <br />
+                {/* asset removed
                 <div className="captioned-image">
                     <img src={girlRun} alt="" />
                     <p>
@@ -44,6 +45,7 @@ const ArtProjects: React.FC<ArtProjectsProps> = (props) => {
                         </sub>
                     </p>
                 </div>
+                */}
                 <p>
                     I really started enjoying the work I was doing, and felt I
                     was improving a lot. Around 2017, I started to upload videos
@@ -94,6 +96,7 @@ const ArtProjects: React.FC<ArtProjectsProps> = (props) => {
                     </li>
                 </ul>
                 <br />
+                {/* asset removed
                 <div className="captioned-image">
                     <img src={gsts} alt="" />
                     <p>
@@ -103,6 +106,7 @@ const ArtProjects: React.FC<ArtProjectsProps> = (props) => {
                         </sub>
                     </p>
                 </div>
+                */}
                 <br />
                 <p>
                     This page is currently a work in progress. I've recently

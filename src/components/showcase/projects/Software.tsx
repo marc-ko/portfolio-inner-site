@@ -1,10 +1,10 @@
 import React from 'react';
 // @ts-ignore
-import saga from '../../../assets/pictures/projects/software/saga.mp4';
+// import saga from '../../../assets/pictures/projects/software/saga.mp4';
 // @ts-ignore
 import computer from '../../../assets/pictures/projects/software/computer.mp4';
 // @ts-ignore
-import scroll from '../../../assets/pictures/projects/software/scroll.mp4';
+// import scroll from '../../../assets/pictures/projects/software/scroll.mp4';
 import ResumeDownload from '../ResumeDownload';
 import VideoAsset from '../../general/VideoAsset';
 
@@ -141,6 +141,7 @@ const SoftwareProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     schedules and were unable to find the time to work on it.
                 </p>
                 <br />
+                {/* asset removed
                 <div className="captioned-image">
                     <VideoAsset src={saga} />
                     <div style={styles.caption}>
@@ -153,6 +154,7 @@ const SoftwareProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         </p>
                     </div>
                 </div>
+                */}
                 <p>
                     Guntattchment Saga was a really fun project to work on and
                     had a multitude of challenges. An interesting challenge that
@@ -219,6 +221,7 @@ const SoftwareProjects: React.FC<SoftwareProjectsProps> = (props) => {
                     reactions.
                 </p>
                 <br />
+                {/* asset removed
                 <div className="captioned-image">
                     <VideoAsset src={scroll} />
                     <p style={styles.caption}>
@@ -229,6 +232,7 @@ const SoftwareProjects: React.FC<SoftwareProjectsProps> = (props) => {
                         </sub>
                     </p>
                 </div>
+                */}
                 <p>
                     The extension is open source and currently released on the
                     Chrome web store. Skip the Scroll is obviously not a project

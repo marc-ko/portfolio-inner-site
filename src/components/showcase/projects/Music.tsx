@@ -7,8 +7,8 @@ import edge from '../../../assets/audio/edge_unmastered.mp3';
 import dnb from '../../../assets/audio/break.mp3';
 // @ts-ignore
 import dnbDrums from '../../../assets/audio/dnb_drop_drums.mp3';
-import houseProject from '../../../assets/pictures/projects/audio/houseProject.png';
-import dnbDrumsProject from '../../../assets/pictures/projects/audio/dnbDrumsProject.png';
+// import houseProject from '../../../assets/pictures/projects/audio/houseProject.png';
+// import dnbDrumsProject from '../../../assets/pictures/projects/audio/dnbDrumsProject.png';
 import { MusicPlayer } from '../../general';
 
 export interface MusicProjectsProps {}
@@ -71,6 +71,7 @@ const MusicProjects: React.FC<MusicProjectsProps> = (props) => {
 
             <br />
             <br />
+            {/* asset removed
             <div className="captioned-image">
                 <img src={houseProject} alt="" />
                 <p>
@@ -80,6 +81,7 @@ const MusicProjects: React.FC<MusicProjectsProps> = (props) => {
                     </sub>
                 </p>
             </div>
+            */}
             <p>
                 I love so much about this track. I'm particularly very proud of
                 the composition and the trichotomy of the happy upbeat energy in
@@ -173,6 +175,7 @@ const MusicProjects: React.FC<MusicProjectsProps> = (props) => {
                 setCurrentSong={setCurrentSong}
             />
             <br />
+            {/* asset removed
             <div className="captioned-image">
                 <img src={dnbDrumsProject} alt="" />
                 <p>
@@ -183,6 +186,7 @@ const MusicProjects: React.FC<MusicProjectsProps> = (props) => {
                     </sub>
                 </p>
             </div>
+            */}
             <br />
             <p>
                 There are a lot of layers to DnB drums, and I honestly find them
