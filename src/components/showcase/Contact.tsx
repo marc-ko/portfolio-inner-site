@@ -48,13 +48,13 @@ const Contact: React.FC<ContactProps> = (props) => {
         }
     }, [email, name, message]);
 
-    // FormSubmit.co: use hashed form ID instead of naked email.
-    // After activation email, they provided: 3b79bfa8c6af877e695f971c686a2a1c
-    const formEndpoint =
-        process.env.REACT_APP_FORMSUBMIT_ID != null &&
-        process.env.REACT_APP_FORMSUBMIT_ID !== ''
-            ? `https://formsubmit.co/ajax/${process.env.REACT_APP_FORMSUBMIT_ID}`
-            : 'https://formsubmit.co/ajax/3b79bfa8c6af877e695f971c686a2a1c';
+    // Web3Forms: access key is public by design, safe to ship in client code.
+    const formEndpoint = 'https://api.web3forms.com/submit';
+    const accessKey =
+        process.env.REACT_APP_WEB3FORMS_KEY != null &&
+        process.env.REACT_APP_WEB3FORMS_KEY !== ''
+            ? process.env.REACT_APP_WEB3FORMS_KEY
+            : '10811e82-827d-407f-8a63-2bd83f7ecbd9';
 
     const handleSubmit = useCallback(() => {
         if (isFormValid) {
@@ -66,15 +66,18 @@ const Contact: React.FC<ContactProps> = (props) => {
                     Accept: 'application/json',
                 },
                 body: JSON.stringify({
+                    access_key: accessKey,
                     name,
                     email,
                     company: company || undefined,
                     message,
-                    _subject: `Portfolio contact from ${name}`,
+                    subject: `Portfolio contact from ${name}`,
+                    from_name: 'Portfolio Contact Form',
                 }),
             })
-                .then((res) => {
-                    if (res.ok) {
+                .then((res) => res.json().then((data) => ({ res, data })))
+                .then(({ res, data }) => {
+                    if (res.ok && data.success) {
                         setFormMessage(
                             `Message successfully sent. Thank you ${name}!`
                         );
@@ -102,7 +105,7 @@ const Contact: React.FC<ContactProps> = (props) => {
             setFormMessage('Form unable to validate, please try again.');
             setFormMessageColor('red');
         }
-    }, [company, email, name, message, isFormValid, formEndpoint]);
+    }, [company, email, name, message, isFormValid, accessKey]);
 
     useEffect(() => {
         if (formMessage.length > 0) {
